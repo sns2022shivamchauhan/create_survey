@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\person;
+use App\Models\Person;
 use App\Http\Requests\StorepersonRequest;
 use App\Http\Requests\UpdatepersonRequest;
 use Faker\Provider\ar_EG\Person as Ar_EGPerson;
@@ -34,16 +34,17 @@ class PersonController extends Controller
     public function store(StorepersonRequest $request)
     {
         //
+        // dd($request->all());
         $new_person = Person::create([
-            'name' => $request->name,
-            'father_name' => $request->father_name,
-            'mother_name' => $request->mother_name,
-            'Age' => $request->Age,
-            'Gender' => $request->Gender,
-            'address' => $request->address,
-            'City' => $request->City,
-            'state' => $request->state,
-            'email' => $request->email,
+            'name' =>$request->name,
+            'father_name' =>$request->father_name,
+            'mother_name' =>$request->mother_name,
+            'Age' =>$request->Age,
+            'Gender' =>$request->Gender,
+            'address' =>$request->address,
+            'City' =>$request->City,
+            'state' =>$request->state,
+            'email' =>$request->email,
         ]);
         return redirect('person/');
     }
